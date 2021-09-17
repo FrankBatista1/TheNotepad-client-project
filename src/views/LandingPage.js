@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
-    <div>
+    <><div className='parent'>
       <h1 className="thenotepadlanding">THE NOTEPAD</h1>
-      <Link to='/fields'>Test</Link>
+    </div><div className="parent"><Link className="start" to='/fields'>Test</Link></div></>
 
-    </div>
+    
   );
 };
 
