@@ -3,7 +3,7 @@ import { EDITOR_JS_TOOLS } from "../services/tools";
 import React from "react";
 import {postFieldToApi} from '../services/fieldservices'
 
-
+import '../stylesheets/Button.css'
 import "../stylesheets/Editor.css";
 
 
@@ -22,7 +22,7 @@ const AddField = () => {
   
   return (
     <div className="myeditor">
-      <button onClick={handleSave}>Save</button>
+      <button className="buttons" onClick={handleSave}>Save</button>
       <EditorJs
         instanceRef={(instance) => (instanceRef.current = instance)}//setting the constant to the instance of the page
         tools={EDITOR_JS_TOOLS}
