@@ -14,7 +14,7 @@ const AddField = () => {
   async function handleSave() {
     const val = await instanceRef.current.save()
     if(val.blocks[0]){
-      await postFieldToApi(val).then('Saved')
+      await postFieldToApi(val).then(alert('Note added'))
     } else{
       alert('Please add text')
     }
@@ -22,7 +22,7 @@ const AddField = () => {
   
   return (
     <div className="myeditor">
-      <button className="buttons" onClick={handleSave}>Save</button>
+      <button className="buttons" onClick={handleSave}>Add Note</button>
       <EditorJs
         instanceRef={(instance) => (instanceRef.current = instance)}//setting the constant to the instance of the page
         tools={EDITOR_JS_TOOLS}

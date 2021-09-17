@@ -6,7 +6,7 @@ import '../stylesheets/Form.css'
 const FormInput = (props) => {
   return (
     <div>
-      <div class="row">
+      <div className="row">
       <input type={props.type} placeholder={props.placeholder}/>
     </div> 
     </div>
