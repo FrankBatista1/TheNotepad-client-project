@@ -14,14 +14,15 @@
   }
 
 .start{
+  margin-top: 11%;
   padding-left: 2%;
   padding-right: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  background-color: rgba(167, 167, 167, 0.658);
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  background-color: rgba(236, 234, 234, 0.658);
   color:black;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 5px;
   font-family: Consolas, monaco, monospace;
 }
 
