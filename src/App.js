@@ -9,12 +9,14 @@ import LandingPage from "./views/LandingPage";
 function App() {
   return (
     <BrowserRouter>
-      <MyNavbar />
       <Switch>
         <Route exact path="/" component={LandingPage}></Route>
-        <Route exact path="/fields" component={FieldsPage}></Route>
-        <Route exact path="/field/:id" component={FieldView}></Route>
-        <Route exact path="/addField" component={AddField}></Route>
+        <div>
+          <MyNavbar />
+          <Route exact path="/fields" component={FieldsPage}></Route>
+          <Route exact path="/field/:id" component={FieldView}></Route>
+          <Route exact path="/addField" component={AddField}></Route>
+        </div>
       </Switch>
     </BrowserRouter>
   );
