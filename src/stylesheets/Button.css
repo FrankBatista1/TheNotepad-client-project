@@ -1,0 +1,12 @@
+.buttons{
+  background-color: white;
+  color: black;
+  margin-left: 45%;
+  margin-top: 5%;
+  text-decoration: none;
+  
+}
+
+.buttons:hover{
+  background-color: gray;
+}

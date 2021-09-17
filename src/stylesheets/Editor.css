@@ -1,0 +1,10 @@
+
+.myeditor {
+  background: rgb(255, 255, 255);
+  width: 60%;
+  margin:auto;
+  border-radius: 10px;
+  color:#000000;
+  border: 5px solid rgb(140, 140, 140);
+  font-family: 'Exo 2', sans-serif;
+}

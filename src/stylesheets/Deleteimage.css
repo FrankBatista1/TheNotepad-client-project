@@ -1,0 +1,15 @@
+.deletebutton{
+  width: 2%;
+  position: relative;
+  bottom: 50px;
+  left: 86%;
+  transition: transform 250ms;
+}
+
+
+
+
+.deletebutton:hover{
+  transform: translateY(-10px);
+  color: gray;
+}

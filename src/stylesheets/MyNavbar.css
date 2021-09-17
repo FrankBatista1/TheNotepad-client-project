@@ -1,0 +1,30 @@
+.navbar{
+  background-image: linear-gradient(rgba(99, 99, 99, 0.705), rgba(0, 0, 0, 0));
+  font-family: 'Exo 2', sans-serif;
+  list-style: none;
+  font-family: Consolas,monaco,monospace; 
+}
+.notes{
+  text-decoration: none;
+  color: rgb(221, 221, 231);
+  margin-left: 14px;
+}
+.home{
+  text-decoration: none;
+  color: rgb(221, 221, 231);
+}
+.title{
+  text-decoration: none;
+  color: rgb(221, 221, 231);
+  font-size: 30px;
+  
+}
+.addfields{
+  text-decoration: none;
+  color: rgb(221, 221, 231);
+  margin-right: 35px;
+}
+
+.home:hover, .addfields:hover, .notes:hover{
+  color: gray;
+}
