@@ -2,7 +2,6 @@
   height: 100%;
   width: 50%;
   position: fixed;
-  z-index: 1;
   top: 0;
   overflow-x: hidden;
   padding-top: 20px;
@@ -36,4 +35,19 @@
   font-family: Consolas, monaco, monospace;
   color: white;
   margin-bottom: 10%;
+}
+.footerPage {
+  position: fixed;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(236, 234, 234, 0.185);
+  color: rgb(190, 190, 190);
+  text-align: center;
+}
+.footerwriting{
+  padding-top: 1%;
+  display: flex;
+  justify-content: right;
 }
