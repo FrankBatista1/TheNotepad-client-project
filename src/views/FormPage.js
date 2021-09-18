@@ -3,7 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FormInput from "../components/FormInput";
 import "../stylesheets/FormPage.css";
-import { width } from "dom-helpers";
 
 const FormPage = () => {
   return (
