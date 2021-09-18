@@ -4,13 +4,13 @@ import FieldsPage from "./views/FieldsPage";
 import MyNavbar from "./components/MyNavbar";
 import FieldView from "./views/FieldView";
 import AddField from "./views/Addfield";
-import LandingPage from "./views/LandingPage";
+import FormPage from "./views/FormPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={LandingPage}></Route>
+        <Route exact path="/" component={FormPage}></Route>
         <div>
           <MyNavbar />
           <Route exact path="/fields" component={FieldsPage}></Route>

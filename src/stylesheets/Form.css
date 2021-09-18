@@ -1,10 +1,8 @@
 .row{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-top: 2rem;
-  max-width: 100%;
-  padding-top: 5%;
+  margin-top: 150%;
+  width: 170%;
+  padding-right: 30%;
 }
 
 .row input{
