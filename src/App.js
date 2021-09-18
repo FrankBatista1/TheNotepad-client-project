@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={LandingPage}></Route>
+      <Route exact path="/" component={LandingPage}></Route>
         <Route exact path="/loginscreen" component={FormPage}></Route>
         <div>
           <MyNavbar />

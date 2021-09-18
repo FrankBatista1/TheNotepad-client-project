@@ -44,6 +44,10 @@
   font-family: Consolas, monaco, monospace;
   border: 0.1rem outset white
 }
+.start:hover {
+  background-color: rgba(14, 14, 14);
+  color: white
+}
 
 .forgotpass{
   display: flex;
@@ -56,10 +60,6 @@
   color: rgba(236, 234, 234, 0.658);
 }
 
-.start:hover {
-  background-color: rgba(190, 188, 188, 0.658);
-  color: white
-}
 .forgotpass_btn:hover{
   padding-bottom: 5%;
   color: white;
