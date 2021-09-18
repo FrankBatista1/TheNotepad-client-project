@@ -12,11 +12,11 @@ const FormPage = () => {
         <h1 className="thenotepadlanding">THE NOTEPAD</h1>
       </div>
       <div className="loginform">
-      <div className="parent">
-        <FormInput placeholder="Enter your username" type="text" />
+        <div className="parent">
+          <FormInput placeholder="Enter your username" type="text" />
         </div>
         <div className="passwordform">
-        <FormInput placeholder="Enter password" type="text" />
+          <FormInput placeholder="Enter password" type="text" />
         </div>
       </div>
       <div className="parent">
