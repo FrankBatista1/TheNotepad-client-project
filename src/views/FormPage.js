@@ -19,14 +19,16 @@ const FormPage = () => {
           <FormInput placeholder="Enter password" type="text" />
         </div>
       </div>
-      <div className="parent">
-        <Link className="start" to="/fields">
-          LOGIN
-        </Link>
-      </div>
-      <div className="forgotpass">
-        <Link className="forgotpass_btn">Forgot password?</Link>
-      </div>
+      <div>
+        <div className="parent2" >
+          <Link className="start" to="/fields">
+            LOGIN
+          </Link>
+          </div>
+          <div className="forgotpass">
+            <Link className="forgotpass_btn">Forgot password?</Link>
+          </div>
+        </div>
     </>
   );
 };

@@ -12,6 +12,12 @@
   align-items: center;
   justify-content: center;
 }
+.parent2{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .loginform{
   margin-top: 3%;
 }
@@ -33,7 +39,8 @@
   color: black;
   text-decoration: none;
   border-radius: 5px;
-  margin-bottom: -10%;
+  margin-bottom: -20%;
+  margin-top: -20%;
   font-family: Consolas, monaco, monospace;
 }
 
@@ -41,8 +48,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 .forgotpass_btn{
+  padding-bottom: 5%;
   color: rgba(236, 234, 234, 0.658);
 }
 
