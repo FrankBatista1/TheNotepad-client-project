@@ -3,12 +3,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FormInput from "../components/FormInput";
 import "../stylesheets/FormPage.css";
+import Logo from '../components/Logo'
 
 const FormPage = () => {
   return (
     <>
       <div className="parent">
-        <h1 className="thenotepadlanding">THE NOTEPAD</h1>
+        <Link to="/" className="thenotepadlanding">THE NOTEPAD</Link>
       </div>
       <div className="loginform">
         <div className="parent">

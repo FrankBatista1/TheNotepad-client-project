@@ -1,9 +1,10 @@
 .thenotepadlanding {
   font-size: 470%;
-  color: white;
+  color: rgb(228, 226, 226);
   font-family: Consolas, monaco, monospace;
   width: auto;
   padding-top: 10%;
+  text-decoration: none;
 }
 
 .parent {
@@ -46,7 +47,7 @@
 }
 .start:hover {
   background-color: rgba(14, 14, 14);
-  color: white
+  color: rgb(228, 226, 226)
 }
 
 .forgotpass{
@@ -62,6 +63,9 @@
 
 .forgotpass_btn:hover{
   padding-bottom: 5%;
-  color: white;
+  color: rgb(228, 226, 226);
 
+}
+.thenotepadlanding:hover{
+  color: rgb(228, 226, 226)
 }

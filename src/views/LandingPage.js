@@ -1,7 +1,7 @@
 import "../stylesheets/LandingPage.css";
 import { Link } from "react-router-dom";
 import "../stylesheets/FormPage.css";
-import { width } from "dom-helpers";
+import Logo from "../components/Logo";
 
 const LandingPage = () => {
   return (
@@ -9,11 +9,8 @@ const LandingPage = () => {
       <div>
         <div className="split left">
           <div className="centered">
-            <h2 className="titleLandingPage">
-              <h5 className="titleLandingPage">THE NOTEPAD</h5>
-              Write stuff in a simple way
-              <br />
-            </h2>
+          <Logo></Logo>
+            <h1 className="titleLandingPage">Write stuff in a simple way</h1>
             <p
               style={{ color: "rgb(150, 150, 150)" }}
               className="titleLandingPage"
