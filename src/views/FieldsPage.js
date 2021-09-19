@@ -2,6 +2,7 @@ import Card from "../components/Card";
 import { useState, useEffect } from "react";
 import { getFieldsFromApi } from "../services/fieldservices";
 import { deleteFieldFromApi} from "../services/fieldservices"
+import Swal from 'sweetalert2'
 import '../stylesheets/Deleteimage.css'
 
 

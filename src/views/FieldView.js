@@ -4,8 +4,9 @@ import React from "react";
 import { getSingleFieldFromApi } from "../services/fieldservices";
 import { useEffect, useState, useRef } from "react";
 import "../stylesheets/Editor.css";
-import { updateFieldtoApi } from "../services/fieldservices";
 import '../stylesheets/Button.css'
+import { updateFieldtoApi } from "../services/fieldservices";
+import Swal from 'sweetalert2'
 
 const FieldView = ({ match }) => {
   const [field, setField] = useState({});
