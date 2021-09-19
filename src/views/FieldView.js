@@ -22,8 +22,7 @@ const FieldView = ({ match }) => {
     getSingleField();
   }, [id]);
   
-  console.log('field outside', field)
-  
+
   
   const instanceRef = useRef(null);
 
@@ -32,7 +31,7 @@ const FieldView = ({ match }) => {
     Swal.fire({
       icon: 'success',
       title: 'Saved',
-      text: 'Your file has been saved',
+      text: 'Your changes have been saved',
       confirmButtonColor: "#878787",
     })
   }

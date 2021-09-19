@@ -25,38 +25,31 @@ import '../stylesheets/Deleteimage.css'
   }
 
   const handleDelete = async (id) => {
-    const response = window.confirm('Are you sure you want to delete it?')
-    if(!response) return;
-    const filtered = fields.filter((field) => {
-      return field._id !== id
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      iconColor: "#d10a0a",
+      showCancelButton: true,
+      confirmButtonColor: "#878787",
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it'
+    }).then((result) => {
+      
+      if (result.isConfirmed) {
+        const filtered = fields.filter((field) => {
+          return field._id !== id
+        }).then(deleteFieldFromApi(id).then(setFields(filtered)))
+          Swal.fire(
+          'Deleted!',
+          'Your field has been deleted.',
+          'success'
+        )
+        
+      }
     })
-    await deleteFieldFromApi(id);
-    setFields(filtered)
+   
   };
-  Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
-    icon: 'warning',
-    iconColor: "#d10a0a",
-    showCancelButton: true,
-    confirmButtonColor: "#878787",
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it'
-  }).then((result) => {
-    
-    if (result.isConfirmed) {
-      const filtered = fields.filter((field) => {
-        return field._id !== id
-      }).then(deleteFieldFromApi(id).then(setFields(filtered)))
-      
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-      )
-      
-    }
-  })
 
 
   return (

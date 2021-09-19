@@ -15,7 +15,12 @@ const AddField = () => {
   async function handleSave() {
     const val = await instanceRef.current.save()
     if(val.blocks[0]){
-      await postFieldToApi(val).then(alert('Note added'))
+      await postFieldToApi(val).then( Swal.fire({
+        icon: 'success',
+        title: 'Added',
+        text: 'Your field has been saved',
+        confirmButtonColor: "#878787",
+      }))
     } else{
       Swal.fire({
         icon: 'warning',
