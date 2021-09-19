@@ -35,16 +35,10 @@ import '../stylesheets/Deleteimage.css'
       cancelButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it'
     }).then((result) => {
-      
-      if (result.isConfirmed) {
+        if (result.isConfirmed) {
         const filtered = fields.filter((field) => {
           return field._id !== id
-        }).then(deleteFieldFromApi(id).then(setFields(filtered)))
-          Swal.fire(
-          'Deleted!',
-          'Your field has been deleted.',
-          'success'
-        )
+        }).then(() => deleteFieldFromApi(id).then(() => setFields(filtered))).then(() => Swal.fire('Deleted!','Your field has been deleted.','success'))
         
       }
     })
