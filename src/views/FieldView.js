@@ -28,7 +28,12 @@ const FieldView = ({ match }) => {
 
   async function handleUpdate() {
     await instanceRef.current.save().then(val => updateFieldtoApi(val, match.params.id))
-    alert('Saved')
+    Swal.fire({
+      icon: 'success',
+      title: 'Saved',
+      text: 'Your file has been saved',
+      confirmButtonColor: "#878787",
+    })
   }
   
   

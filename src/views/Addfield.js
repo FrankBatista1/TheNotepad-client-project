@@ -2,6 +2,7 @@ import EditorJs from "react-editor-js";
 import { EDITOR_JS_TOOLS } from "../services/tools";
 import React from "react";
 import {postFieldToApi} from '../services/fieldservices'
+import Swal from 'sweetalert2'
 
 import '../stylesheets/Button.css'
 import "../stylesheets/Editor.css";
@@ -16,7 +17,13 @@ const AddField = () => {
     if(val.blocks[0]){
       await postFieldToApi(val).then(alert('Note added'))
     } else{
-      alert('Please add text')
+      Swal.fire({
+        icon: 'warning',
+        iconColor: "#d10a0a",
+        title: 'Please add text',
+        text: "You can't add a blank document",
+        confirmButtonColor: "#878787",
+      })
     }
   }
   

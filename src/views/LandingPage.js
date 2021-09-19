@@ -18,13 +18,13 @@ const LandingPage = () => {
               A simple notepad whit basic features to organize and edit your
               notes, projects and ideas.
             </p>
-            <Link className="start" to="/loginscreen">
+            <Link className="start" to="/login">
               START
             </Link>
             <Link
               style={{ marginLeft: "10px" }}
               className="start"
-              to="/loginscreen"
+              to="/about"
             >
               ABOUT
             </Link>
