@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const apiUrl = process.env.REACT_APP_API_URL
+const apiUrl = 'http://localhost:5000/api'
 
 export const getFieldsFromApi = async () => {
   const response = await axios.get(`${apiUrl}/fields`)
