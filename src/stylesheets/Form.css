@@ -1,6 +1,6 @@
 .row{
-  width: 170%;
-  padding-right: 30%;
+  width: 100%;
+  padding-left: 30%;
 }
 
 .row input{
@@ -32,9 +32,3 @@
   opacity: 0;
 }
 
-.row label{
-  align-self: start;
-  padding-left: 4.5rem;
-  padding-bottom: 0.5rem;
-  color: rgba(187,187,187,0.9);
-}

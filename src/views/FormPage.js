@@ -42,6 +42,7 @@ import "../stylesheets/FormPage.css";
 import '../stylesheets/Form.css'
 import { useState, useEffect} from "react";
 import axios from "axios";
+import { width } from "@mui/system";
 
 const FormPage = ({history}) => {
   const [email, setEmail] = useState("");
@@ -72,7 +73,7 @@ const FormPage = ({history}) => {
 
       localStorage.setItem("authToken", data.token);
 
-      history.push("/fields");
+      history.push("/");
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -91,7 +92,7 @@ const FormPage = ({history}) => {
 
       <form onSubmit={loginHandler} className="loginform">
       {error && <span className="errormsg">{error}</span>}
-        <div className="parent">
+        <div style={{height: '200px'}}>
         <div className="row">
           <input
             required
@@ -103,7 +104,7 @@ const FormPage = ({history}) => {
           />
           </div>
         </div>
-        <div className="passwordform">
+        
         <div className="row">
           <input
             required
@@ -119,7 +120,7 @@ const FormPage = ({history}) => {
               LOGIN
             </button>
           </div>
-        </div>
+       
       </form>
       <div>
         <div className="forgotpass">
