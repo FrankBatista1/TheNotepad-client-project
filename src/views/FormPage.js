@@ -68,7 +68,7 @@ const FormPage = ({history}) => {
 
     try {
       const { data } = await axios.post(
-        `${apiUrl}`,
+        `${apiUrl}/auth/login`,
         { email, password },
         config
       );
