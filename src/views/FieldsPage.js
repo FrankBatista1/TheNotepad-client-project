@@ -69,6 +69,7 @@ import { deleteFieldFromApi } from "../services/fieldservices";
 import Swal from "sweetalert2";
 import "../stylesheets/Deleteimage.css";
 import axios from "axios";
+import { StyledEngineProvider } from "@mui/styled-engine";
 
 const apiUrl = process.env.REACT_APP_API_URL
 
@@ -90,6 +91,7 @@ const FieldsPage = ({history}) => {
       
       try {
         const {data} = await axios.get(`${apiUrl}/fields`, config);
+        setPrivateData(data.data)
       } catch (error) {
         localStorage.removeItem("authToken");
         setError("You are not authorized please login");
