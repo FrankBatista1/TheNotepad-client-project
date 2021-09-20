@@ -29,7 +29,7 @@ const FieldView = ({ match }) => {
       }
       
       try {
-        const { data } = await axios.get(`${apiUrl}/api/fields/field/${id}`, config);
+        const { data } = await axios.get(`${apiUrl}/fields/field/${id}`, config);
         setField(data);
       } catch (error) {
         // localStorage.removeItem("authToken");
@@ -52,7 +52,7 @@ const FieldView = ({ match }) => {
          Accept: "application/json"
         }
       }
-    await instanceRef.current.save().then(val => axios.put(`${apiUrl}/api/fields/field/${id}`, val, config))
+    await instanceRef.current.save().then(val => axios.put(`${apiUrl}/fields/field/${id}`, val, config))
     Swal.fire({
       icon: 'success',
       title: 'Saved',

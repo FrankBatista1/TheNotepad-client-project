@@ -26,7 +26,7 @@ const AddField = ({history}) => {
     
     const val = await instanceRef.current.save()
     if(val.blocks[0]){
-        await axios.post(`${apiUrl}/api/fields/field`, val, config).then( Swal.fire({
+        await axios.post(`${apiUrl}/fields/field`, val, config).then( Swal.fire({
         icon: 'success',
         title: 'Added',
         text: 'Your field has been saved',

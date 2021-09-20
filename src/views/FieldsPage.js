@@ -38,7 +38,7 @@ const FieldsPage = ({history}) => {
     }
     
     try {
-      const { data } = await axios.get(`${apiUrl}/api/fields`, config);
+      const { data } = await axios.get(`${apiUrl}/fields`, config);
       setFields(data);
     } catch (error) {
       // localStorage.removeItem("authToken");
@@ -69,7 +69,7 @@ const FieldsPage = ({history}) => {
       if (result.isConfirmed) {
         const filtered = fields
           .filter((field) => field._id !== id)
-          axios.delete(`http://localhost:5000/api/fields//field/${id}`, config);
+          axios.delete(`${apiUrl}/fields/field/${id}`, config);
           setFields(filtered)
           Swal.fire("Deleted!", "Your field has been deleted.", "success");
       }
