@@ -42,7 +42,7 @@ import "../stylesheets/FormPage.css";
 import '../stylesheets/Form.css'
 import { useState, useEffect} from "react";
 import axios from "axios";
-import { checkLogin } from "../services/authservices";
+
 
 const apiUrl = process.env.REACT_APP_API_URL
 
@@ -67,7 +67,11 @@ const FormPage = ({history}) => {
     };
 
     try {
-      const { data } = checkLogin(email, password, config);
+      const { data } = await axios.post(
+        `${apiUrl}`,
+        { email, password },
+        config
+      );
 
       localStorage.setItem("authToken", data.token);
 
