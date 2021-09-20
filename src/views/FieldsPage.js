@@ -89,7 +89,7 @@ const FieldsPage = ({history}) => {
       }
       
       try {
-        const {data} = await axios.get(`${apiUrl}/api/login`, config);
+        const {data} = await axios.get(`${apiUrl}/fields`, config);
       } catch (error) {
         localStorage.removeItem("authToken");
         setError("You are not authorized please login");
