@@ -1,14 +1,16 @@
-.titleaboutpage{
+.titleaboutpage {
   font-family: Consolas, monaco, monospace;
   color: white;
   font-size: 22px;
 }
-.logoaboutlogoimg{
+.logoaboutlogoimg {
   width: 100%;
 }
-.centerabout{
-  
-    display: flex;
-    justify-content: center;
-     
-  }
+.centerabout {
+  display: flex;
+  justify-content: center;
+}
+.divideAbout {
+  display: flex;
+  justify-content: space-around;
+}

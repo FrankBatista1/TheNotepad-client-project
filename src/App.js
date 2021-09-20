@@ -7,6 +7,7 @@ import AddField from "./views/Addfield";
 import FormPage from "./views/FormPage";
 import LandingPage from "./views/LandingPage";
 import AboutPage from "./views/AboutPage";
+import UserPage from "./views/UserPage";
 
 function App() {
   return (
@@ -17,9 +18,9 @@ function App() {
         <Route exact path="/login" component={FormPage}></Route>
         <div>
           <MyNavbar />
-          <Route exact path="/fields" component={FieldsPage}></Route>
-          <Route exact path="/field/:id" component={FieldView}></Route>
-          <Route exact path="/addField" component={AddField}></Route>
+          <UserPage exact path="/fields" component={FieldsPage}></UserPage>
+          <UserPage exact path="/field/:id" component={FieldView}></UserPage>
+          <UserPage exact path="/addField" component={AddField}></UserPage>
         </div>
       </Switch>
     </BrowserRouter>
