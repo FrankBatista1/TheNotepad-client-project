@@ -3,19 +3,30 @@ import { EDITOR_JS_TOOLS } from "../services/tools";
 import React from "react";
 import {postFieldToApi} from '../services/fieldservices'
 import Swal from 'sweetalert2'
+import axios from "axios";
 
 import '../stylesheets/Button.css'
 import "../stylesheets/Editor.css";
 
+const apiUrl = process.env.REACT_APP_API_URL
 
-
-const AddField = () => {
+const AddField = ({history}) => {
   const instanceRef = React.useRef(null);// Creating an ref constant
+  
 
   async function handleSave() {
+    const token = localStorage.getItem("authToken");
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json"
+      }
+    }
+    
     const val = await instanceRef.current.save()
     if(val.blocks[0]){
-      await postFieldToApi(val).then( Swal.fire({
+        await axios.post(`${apiUrl}/api/fields/field`, val, config).then( Swal.fire({
         icon: 'success',
         title: 'Added',
         text: 'Your field has been saved',

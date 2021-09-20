@@ -7,27 +7,52 @@ import "../stylesheets/Editor.css";
 import '../stylesheets/Button.css'
 import { updateFieldtoApi } from "../services/fieldservices";
 import Swal from 'sweetalert2'
+import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL
 
 const FieldView = ({ match }) => {
   const [field, setField] = useState({});
   const { id } = match.params;
   
+  
   useEffect(() => {
+  
     const getSingleField = async () => {
-      const response = await getSingleFieldFromApi(id);
-      console.log("resonse.data", response.data);
-      setField(response.data);
-      console.log('field',  field)
+      const token = localStorage.getItem("authToken");
+    
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+         Accept: "application/json"
+        }
+      }
+      
+      try {
+        const { data } = await axios.get(`${apiUrl}/api/fields/field/${id}`, config);
+        setField(data);
+      } catch (error) {
+        // localStorage.removeItem("authToken");
+        console.log(error)
+      }
     };
     getSingleField();
   }, [id]);
   
-
   
   const instanceRef = useRef(null);
 
   async function handleUpdate() {
-    await instanceRef.current.save().then(val => updateFieldtoApi(val, match.params.id))
+    const token = localStorage.getItem("authToken");
+    
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+         Accept: "application/json"
+        }
+      }
+    await instanceRef.current.save().then(val => axios.put(`${apiUrl}/api/fields/field/${id}`, val, config))
     Swal.fire({
       icon: 'success',
       title: 'Saved',
