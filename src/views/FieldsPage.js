@@ -79,6 +79,7 @@ const FieldsPage = ({history}) => {
     const getFields = async () => {
       const config = {
         headers: {
+          "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
       }
@@ -87,11 +88,12 @@ const FieldsPage = ({history}) => {
         console.log(response);
         setFields(response.data);
       } catch (error) {
-        console.log("Server not working");
+        localStorage.removeItem("authToken");
+        setError("You are not authorized please login");
       }
     };
     getFields();
-  }, [history]);
+  }, []);
 
 
   const handleDelete = async (id) => {
