@@ -33,7 +33,7 @@ const FormPage = ({history}) => {
 
       localStorage.setItem("authToken", data.token)
 
-      history.pushState('/fields');
+      history.push('/fields');
     } catch (error) {
       setError(error.response.data.error)
       setTimeout(() => {

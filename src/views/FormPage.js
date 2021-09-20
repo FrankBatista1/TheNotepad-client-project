@@ -42,7 +42,9 @@ import "../stylesheets/FormPage.css";
 import '../stylesheets/Form.css'
 import { useState, useEffect} from "react";
 import axios from "axios";
-import { width } from "@mui/system";
+import { checkLogin } from "../services/authservices";
+
+const apiUrl = process.env.REACT_APP_API_URL
 
 const FormPage = ({history}) => {
   const [email, setEmail] = useState("");
@@ -65,15 +67,11 @@ const FormPage = ({history}) => {
     };
 
     try {
-      const { data } = await axios.post(
-        "/api/auth/login",
-        { email, password },
-        config
-      );
+      const { data } = checkLogin(email, password, config);
 
       localStorage.setItem("authToken", data.token);
 
-      history.push("/");
+      history.push("/fields");
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -90,7 +88,7 @@ const FormPage = ({history}) => {
         </Link>
       </div>
 
-      <form onSubmit={loginHandler} className="loginform">
+      <form onSubmit={loginHandler} style={{paddingTop: '3%'}}className="loginform">
       {error && <span className="errormsg">{error}</span>}
         <div style={{height: '200px'}}>
         <div className="row">

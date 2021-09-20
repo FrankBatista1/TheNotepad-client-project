@@ -22,3 +22,4 @@ export const deleteFieldFromApi = async (id) => {
   const response = await axios.delete(`${apiUrl}/fields/field/${id}`);
   return response;
 }
+
