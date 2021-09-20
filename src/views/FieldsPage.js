@@ -68,9 +68,13 @@ import { getFieldsFromApi } from "../services/fieldservices";
 import { deleteFieldFromApi } from "../services/fieldservices";
 import Swal from "sweetalert2";
 import "../stylesheets/Deleteimage.css";
+import axios from "axios";
+
+const apiUrl = process.env.REACT_APP_API_URL
 
 const FieldsPage = ({history}) => {
   const [fields, setFields] = useState([]);
+  const [privateData, setPrivateData] = useState("");
 
   useEffect(() => {
     if(!localStorage.getItem('authToken')){
@@ -83,14 +87,16 @@ const FieldsPage = ({history}) => {
           Authorization: `Bearer ${localStorage.getItem("authToken")}`
         }
       }
+      
       try {
-        const response = await getFieldsFromApi();
-        console.log(response);
-        setFields(response.data);
+        const {data} = await axios.get(`${apiUrl}/api/login`, config);
       } catch (error) {
         localStorage.removeItem("authToken");
         setError("You are not authorized please login");
       }
+      const response = await getFieldsFromApi();
+        console.log(response);
+        setFields(response.data);
     };
     getFields();
   }, []);
