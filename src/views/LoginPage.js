@@ -2,8 +2,6 @@
 import "../stylesheets/FormPage.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import FormInput from "../components/FormInput";
-import "../stylesheets/FormPage.css";
 import '../stylesheets/Form.css'
 import { useState, useEffect} from "react";
 import axios from "axios";
@@ -11,7 +9,7 @@ import axios from "axios";
 
 const apiUrl = process.env.REACT_APP_API_URL
 
-const FormPage = ({history}) => {
+const LoginPage = ({history}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("")
@@ -61,7 +59,7 @@ const FormPage = ({history}) => {
           <input
             required
             id="email"
-            placeholder="Enter your email"
+            placeholder="Type admin@admin.com"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -73,7 +71,7 @@ const FormPage = ({history}) => {
           <input
             required
             id="password"
-            placeholder="Enter your password"
+            placeholder="Type 123456"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -95,4 +93,4 @@ const FormPage = ({history}) => {
   );
 };
 
-export default FormPage;
+export default LoginPage;

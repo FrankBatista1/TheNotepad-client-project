@@ -32,7 +32,7 @@ const FieldView = ({ match }) => {
         const { data } = await axios.get(`${apiUrl}/fields/field/${id}`, config);
         setField(data);
       } catch (error) {
-        // localStorage.removeItem("authToken");
+        localStorage.removeItem("authToken");
         console.log(error)
       }
     };
