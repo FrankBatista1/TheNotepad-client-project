@@ -4,7 +4,7 @@ import FieldsPage from "./views/FieldsPage";
 import MyNavbar from "./components/MyNavbar";
 import FieldView from "./views/FieldView";
 import AddField from "./views/Addfield";
-import LandingPage from "./views/LandingPage";
+import HeroPage from "./views/HeroPage";
 import AboutPage from "./views/AboutPage";
 import UserPage from "./views/UserPage";
 import LoginPage from "./views/LoginPage";
@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={LandingPage}></Route>
+        <Route exact path="/" component={HeroPage}></Route>
         <Route exact path="/about" component={AboutPage}></Route>
         <Route exact path="/login" component={LoginPage}></Route>
         <div>

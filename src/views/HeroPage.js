@@ -1,19 +1,19 @@
-import "../stylesheets/LandingPage.css";
+import "../stylesheets/HeroPage.css";
 import { Link } from "react-router-dom";
 import "../stylesheets/FormPage.css";
 import Logo from "../components/Logo";
 
-const LandingPage = () => {
+const HeroPage = () => {
   return (
     <>
       <div>
         <div className="split left">
           <div className="centered">
           <Logo></Logo>
-            <h1 className="titleLandingPage">Write stuff in a simple way</h1>
+            <h1 className="titleHeroPage">Write stuff in a simple way</h1>
             <p
               style={{ color: "rgb(150, 150, 150)" }}
-              className="titleLandingPage"
+              className="titleHeroPage"
             >
               A simple notepad whit basic features to organize and edit your
               notes, projects and ideas.
@@ -48,4 +48,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default HeroPage;

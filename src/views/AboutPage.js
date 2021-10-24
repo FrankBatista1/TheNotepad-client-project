@@ -1,4 +1,3 @@
-import { flexbox } from "@mui/system";
 import "../stylesheets/Aboutpage.css";
 
 const AboutPage = () => {
@@ -14,7 +13,7 @@ const AboutPage = () => {
         </div>
       </div>
       <div >
-        <h2 style={{color: "white", display: 'flex', justifyContent: 'center'}}>Work in progress come back later :D</h2>
+        <h2 style={{color: "white", display: 'flex', justifyContent: 'center'}}>A notepad app to add your personal notes</h2>
       </div>
       
     </>
