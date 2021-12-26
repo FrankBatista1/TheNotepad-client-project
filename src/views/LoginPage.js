@@ -1,18 +1,15 @@
-
-import "../stylesheets/FormPage.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import '../stylesheets/Form.css'
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import "../stylesheets/FormPage.css";
 
+const apiUrl = process.env.REACT_APP_API_URL;
 
-const apiUrl = process.env.REACT_APP_API_URL
-
-const LoginPage = ({history}) => {
+const LoginPage = ({ history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
@@ -40,55 +37,46 @@ const LoginPage = ({history}) => {
 
       history.push("/fields");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
   return (
     <>
-      <div className="parent">
-        <Link to="/" className="thenotepadlanding">
+      <form className="formContainer" onSubmit={loginHandler}>
+        <Link to="/" className="theNotepadHeader">
           THE NOTEPAD
         </Link>
-      </div>
+        {error && <span className="errormsg">{error}</span>}
+        <input
+          className="formInput"
+          required
+          id="email"
+          placeholder="Type admin@admin.com"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <form onSubmit={loginHandler} style={{paddingTop: '3%'}}className="loginform">
-      {error && <span className="errormsg">{error}</span>}
-        <div style={{height: '200px'}}>
-        <div className="row">
-          <input
-            required
-            id="email"
-            placeholder="Type admin@admin.com"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          </div>
-        </div>
-        
-        <div className="row">
-          <input
-            required
-            id="password"
-            placeholder="Type 123456"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          </div>
-          <div className="parent2">
-            <button type="submit" className="start" >
-              LOGIN
-            </button>
-          </div>
-       
-      </form>
-      <div>
+        <input
+          className="formInput"
+          required
+          id="password"
+          placeholder="Type 123456"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit" className="start">
+          LOGIN
+        </button>
         <div className="forgotpass">
-          <Link to="/" className="forgotpass_btn">Forgot password?</Link>
+          <Link to="/" className="forgotpass_btn">
+            Forgot password?
+          </Link>
         </div>
-      </div>
+      </form>
     </>
   );
 };
