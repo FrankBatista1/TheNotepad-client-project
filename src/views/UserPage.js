@@ -1,4 +1,3 @@
-import Switch from "react-bootstrap/esm/Switch";
 import { Redirect, Route } from "react-router";
 
 const UserPage = ({ component: Component, ...rest }) => {

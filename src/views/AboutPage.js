@@ -7,7 +7,7 @@ const AboutPage = () => {
         <div>
           <img
             className="logoaboutlogoimg"
-            src="https://res.cloudinary.com/duscflsvf/image/upload/v1632013750/Add_a_subheading_mbt1my.png"
+            src="https://res.cloudinary.com/duscflsvf/image/upload/v1632013750/Add_a_subheading_mbt1my.png" alt="About logo img"
           ></img>
           <h1 className="titleaboutpage">THE NOTEPAD</h1>
         </div>

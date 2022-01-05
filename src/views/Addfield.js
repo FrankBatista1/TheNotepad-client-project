@@ -1,7 +1,6 @@
 import EditorJs from "react-editor-js";
 import { EDITOR_JS_TOOLS } from "../services/tools";
 import React from "react";
-import {postFieldToApi} from '../services/fieldservices'
 import Swal from 'sweetalert2'
 import axios from "axios";
 

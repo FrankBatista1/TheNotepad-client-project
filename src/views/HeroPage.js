@@ -35,6 +35,7 @@ const HeroPage = () => {
             <img
               style={{ width: "100%" }}
               src="https://res.cloudinary.com/duscflsvf/image/upload/v1632001918/Screen_Shot_2021-09-18_at_5.51.37_PM_gjciy3.png"
+              alt="Demo Img"
             ></img>
           </div>
         </div>

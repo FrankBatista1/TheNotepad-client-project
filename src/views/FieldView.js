@@ -1,11 +1,9 @@
 import EditorJs from "react-editor-js";
 import { EDITOR_JS_TOOLS } from "../services/tools";
 import React from "react";
-import { getSingleFieldFromApi } from "../services/fieldservices";
 import { useEffect, useState, useRef } from "react";
 import "../stylesheets/Editor.css";
 import '../stylesheets/Button.css'
-import { updateFieldtoApi } from "../services/fieldservices";
 import Swal from 'sweetalert2'
 import axios from "axios";
 const apiUrl = process.env.REACT_APP_API_URL

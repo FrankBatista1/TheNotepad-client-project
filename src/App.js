@@ -1,13 +1,16 @@
-import "./App.css";
+// Changing pages with no rerenders
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import FieldsPage from "./views/FieldsPage";
+// Components imports
 import MyNavbar from "./components/MyNavbar";
+// Views imports
+import FieldsPage from "./views/FieldsPage";
 import FieldView from "./views/FieldView";
 import AddField from "./views/Addfield";
 import HeroPage from "./views/HeroPage";
 import AboutPage from "./views/AboutPage";
 import UserPage from "./views/UserPage";
 import LoginPage from "./views/LoginPage";
+
 
 function App() {
   return (
