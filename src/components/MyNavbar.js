@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import '../stylesheets/MyNavbar.css'
 
+//Navbar component when logged in
 const MyNavbar = () => {
   return (
     <div>
@@ -14,7 +15,7 @@ const MyNavbar = () => {
           <h1 className="title">THE NOTEPAD</h1>
         </li>
         <li>
-          <Link to='/addField' className="addfields">Add Notes</Link>
+          <Link to='/addField' className="addnotes">Add Notes</Link>
         </li>
       </ul>
       

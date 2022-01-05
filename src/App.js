@@ -10,6 +10,8 @@ import HeroPage from "./views/HeroPage";
 import AboutPage from "./views/AboutPage";
 import UserPage from "./views/UserPage";
 import LoginPage from "./views/LoginPage";
+//General styles
+import "./App.css"
 
 
 function App() {

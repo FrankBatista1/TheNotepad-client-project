@@ -1,0 +1,39 @@
+
+/* to center the notes with the delete button */
+.noteAndDelete-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.note-container{
+  background-color: white;
+  width: 70%;
+  color: black;
+  transition: transform 250ms;
+  border-radius: 10px;
+  margin: 10px;
+  font-size: 20px;
+}
+.note-link{
+  text-decoration: none;
+  color: #0e0e0e;
+}
+.note{
+  padding: 10px;
+}
+.deletebutton{
+  margin: 0 10px;
+  width: 30px;
+  transition: transform 250ms;
+}
+
+.deletebutton:hover{
+  transform: translateY(-10px);
+  color: gray;
+  cursor: pointer;
+}
+
+.note-container:hover{
+  transform: translateY(-10px);
+  color: gray;
+}

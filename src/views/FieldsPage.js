@@ -1,8 +1,8 @@
 
-import Card from "../components/Card";
+import Note from "../components/Note";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import "../stylesheets/Deleteimage.css";
+import "../stylesheets/Note.css"
 import axios from "axios";
 
 const apiUrl = process.env.REACT_APP_API_URL
@@ -79,13 +79,13 @@ const FieldsPage = ({history}) => {
 
   return (
   
-    <div style={{ marginTop: "50px", marginBottom: "50px" }}>
+    <div >
       {fields &&
         fields.map((field) => (
-          <div key={field._id}>
-            <Card props={field} />
+          <div className="noteAndDelete-container" key={field._id}>
+            <Note props={field} />
             <img
-              onClick={(event) => handleDelete(field._id)}
+              onClick={() => handleDelete(field._id)}
               className="deletebutton"
               src="https://www.freeiconspng.com/thumbs/x-png/red-x-png-4.png"
               alt="x"
