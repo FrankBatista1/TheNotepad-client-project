@@ -19,10 +19,6 @@ const FieldsPage = ({ history }) => {
     // getFields();
   }, []);
 
-  const logoutHandler = () => {
-    localStorage.removeItem("authToken");
-    history.push("/");
-  };
   // checkIfAuth()
 
   const fetchPrivateData = async () => {

@@ -12,10 +12,6 @@ const apiUrl = process.env.REACT_APP_API_URL
 
 const AddField = ({history}) => {
   const instanceRef = React.useRef(null);// Creating an ref constant
-  const logoutHandler = () => {
-    localStorage.removeItem("authToken");
-    history.push("/");
-  }
 
   async function handleSave() {
     const token = localStorage.getItem("authToken");
