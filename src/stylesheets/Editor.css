@@ -8,3 +8,22 @@
   border: 5px solid rgb(140, 140, 140);
   font-family: 'Exo 2', sans-serif;
 }
+.buttons{
+  background-color: white;
+  color: black;
+  margin-left: 45%;
+  margin-top: 5%;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 15px;
+  border: solid #0e0e0e 3px;
+  cursor: pointer;
+ 
+}
+
+
+.buttons:hover{
+  background-color: #0e0e0e;
+  color: white;
+}

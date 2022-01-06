@@ -1,39 +1,46 @@
-
 /* to center the notes with the delete button */
-.noteAndDelete-container{
+.noteAndDelete-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.note-container{
+
+.note-container {
   background-color: white;
   width: 70%;
   color: black;
   transition: transform 250ms;
   border-radius: 10px;
-  margin: 10px;
+  margin: 14px;
   font-size: 20px;
 }
-.note-link{
+.note-link {
   text-decoration: none;
   color: #0e0e0e;
 }
-.note{
+.note {
   padding: 10px;
 }
-.deletebutton{
+.deletebutton {
   margin: 0 10px;
   width: 30px;
   transition: transform 250ms;
 }
+.bottom-buttons {
+  position: absolute;
+  width:100%;
+  left: 1300px;
+  top: 700px;
+}
 
-.deletebutton:hover{
+.deletebutton:hover {
   transform: translateY(-10px);
   color: gray;
   cursor: pointer;
 }
-
-.note-container:hover{
+.note-link:hover {
+  color: grey;
+}
+.note-container:hover {
   transform: translateY(-10px);
-  color: gray;
 }

@@ -1,4 +1,3 @@
-import Note from "../components/Note";
 import { useState, useEffect } from "react";
 import { getFieldsFromApi } from "../services/fieldservices";
 import { deleteFieldFromApi } from "../services/fieldservices";

@@ -1,28 +1,30 @@
-
 import Note from "../components/Note";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import "../stylesheets/Note.css"
+import "../stylesheets/Note.css";
 import axios from "axios";
+import LogoutButton from "../components/LogoutButton";
 
-const apiUrl = process.env.REACT_APP_API_URL
+const apiUrl = process.env.REACT_APP_API_URL;
 
-const FieldsPage = ({history}) => {
+const FieldsPage = ({ history }) => {
   const [fields, setFields] = useState([]);
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    
-    if(!localStorage.getItem('authToken')){
-      history.push("/login")
+    if (!localStorage.getItem("authToken")) {
+      history.push("/login");
     }
-    fetchPrivateData()
+    fetchPrivateData();
     // getFields();
   }, []);
-  
 
+  const logoutHandler = () => {
+    localStorage.removeItem("authToken");
+    history.push("/");
+  };
   // checkIfAuth()
-  
+
   const fetchPrivateData = async () => {
     const token = localStorage.getItem("authToken");
     console.log(token);
@@ -30,10 +32,10 @@ const FieldsPage = ({history}) => {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
-       Accept: "application/json"
-      }
-    }
-    
+        Accept: "application/json",
+      },
+    };
+
     try {
       const { data } = await axios.get(`${apiUrl}/fields`, config);
       setFields(data);
@@ -43,16 +45,15 @@ const FieldsPage = ({history}) => {
     }
   };
 
-
   const handleDelete = async (id) => {
     const token = localStorage.getItem("authToken");
     const config = {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
-       Accept: "application/json"
-      }
-    }
+        Accept: "application/json",
+      },
+    };
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -64,22 +65,16 @@ const FieldsPage = ({history}) => {
       confirmButtonText: "Yes, delete it",
     }).then((result) => {
       if (result.isConfirmed) {
-        const filtered = fields
-          .filter((field) => field._id !== id)
-          axios.delete(`${apiUrl}/fields/field/${id}`, config);
-          setFields(filtered)
-          Swal.fire("Deleted!", "Your field has been deleted.", "success");
+        const filtered = fields.filter((field) => field._id !== id);
+        axios.delete(`${apiUrl}/fields/field/${id}`, config);
+        setFields(filtered);
+        Swal.fire("Deleted!", "Your field has been deleted.", "success");
       }
     });
   };
-  const logoutHandler = () => {
-    localStorage.removeItem('authToken')
-    history.push('/');
-  }
 
   return (
-  
-    <div >
+    <div>
       {fields &&
         fields.map((field) => (
           <div className="noteAndDelete-container" key={field._id}>
@@ -92,10 +87,9 @@ const FieldsPage = ({history}) => {
             ></img>
           </div>
         ))}
-        <button className="start" onClick={logoutHandler}>Logout</button>
+        <LogoutButton history={history}></LogoutButton>
     </div>
   );
 };
 
 export default FieldsPage;
-

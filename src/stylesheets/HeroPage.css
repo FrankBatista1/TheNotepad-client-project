@@ -10,12 +10,10 @@
   left: 0;
   background-color: rgb(14, 14, 14);
 }
-
 .right {
   right: 0;
   background-color: rgb(14, 14, 14);
 }
-
 .centered {
   position: absolute;
   top: 50%;
@@ -38,7 +36,6 @@
 }
 .footerPage {
   position: fixed;
-
   left: 0;
   bottom: 0;
   width: 100%;

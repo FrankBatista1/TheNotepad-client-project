@@ -3,15 +3,19 @@ import { EDITOR_JS_TOOLS } from "../services/tools";
 import React from "react";
 import Swal from 'sweetalert2'
 import axios from "axios";
+import LogoutButton from "../components/LogoutButton";
 
-import '../stylesheets/Button.css'
+import "../stylesheets/FormPage.css"
 import "../stylesheets/Editor.css";
 
 const apiUrl = process.env.REACT_APP_API_URL
 
 const AddField = ({history}) => {
   const instanceRef = React.useRef(null);// Creating an ref constant
-  
+  const logoutHandler = () => {
+    localStorage.removeItem("authToken");
+    history.push("/");
+  }
 
   async function handleSave() {
     const token = localStorage.getItem("authToken");
@@ -49,6 +53,7 @@ const AddField = ({history}) => {
         instanceRef={(instance) => (instanceRef.current = instance)}//setting the constant to the instance of the page
         tools={EDITOR_JS_TOOLS}
       ></EditorJs>
+      <LogoutButton history={history}></LogoutButton>
     </div>
   );
 };
