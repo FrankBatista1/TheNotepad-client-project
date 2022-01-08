@@ -52,7 +52,7 @@ const LoginPage = ({ history }) => {
           className="formInput"
           required
           id="email"
-          placeholder="Type admin@admin.com"
+          placeholder="Email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +62,7 @@ const LoginPage = ({ history }) => {
           className="formInput"
           required
           id="password"
-          placeholder="Type 123456"
+          placeholder="Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

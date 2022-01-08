@@ -42,7 +42,7 @@ const HeroPage = () => {
       </div>
       <div className="footerPage">
         <footer className ="footerwriting">
-          <p style={{paddingRight: 30}}>©THE NOTEPAD by Frank Batista</p>
+          <p style={{padding: "10px"}}>©THE NOTEPAD by Frank Batista</p>
         </footer>
       </div>
     </>
