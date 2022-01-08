@@ -1,12 +1,12 @@
-.titleaboutpage {
+.titleAboutPage {
   font-family: Consolas, monaco, monospace;
   color: white;
   font-size: 22px;
 }
-.logoaboutlogoimg {
+.logoAboutlogoimg {
   width: 100%;
 }
-.centerabout {
+.centerAbout {
   display: flex;
   justify-content: center;
 }

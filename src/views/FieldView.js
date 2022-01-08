@@ -6,7 +6,9 @@ import LogoutButton from "../components/LogoutButton";
 import "../stylesheets/Editor.css";
 import Swal from "sweetalert2";
 import axios from "axios";
+
 const apiUrl = process.env.REACT_APP_API_URL;
+const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
 
 const FieldView = ({ match }) => {
   const [field, setField] = useState({});
@@ -14,7 +16,7 @@ const FieldView = ({ match }) => {
 
   useEffect(() => {
     const getSingleField = async () => {
-      const token = localStorage.getItem("authToken");
+      const token = localStorage.getItem(authToken);
 
       const config = {
         headers: {
@@ -41,7 +43,7 @@ const FieldView = ({ match }) => {
   const instanceRef = useRef(null);
 
   async function handleUpdate() {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem(authToken);
 
     const config = {
       headers: {

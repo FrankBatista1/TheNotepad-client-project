@@ -6,13 +6,14 @@ import axios from "axios";
 import LogoutButton from "../components/LogoutButton";
 
 const apiUrl = process.env.REACT_APP_API_URL;
+const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
 
-const FieldsPage = ({ history }) => {
+const NotesPage = ({ history }) => {
   const [fields, setFields] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!localStorage.getItem("authToken")) {
+    if (!localStorage.getItem(authToken)) {
       history.push("/login");
     }
     fetchPrivateData();
@@ -22,7 +23,7 @@ const FieldsPage = ({ history }) => {
   // checkIfAuth()
 
   const fetchPrivateData = async () => {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem(authToken);
     console.log(token);
     const config = {
       headers: {
@@ -42,7 +43,7 @@ const FieldsPage = ({ history }) => {
   };
 
   const handleDelete = async (id) => {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem(authToken);
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -88,4 +89,4 @@ const FieldsPage = ({ history }) => {
   );
 };
 
-export default FieldsPage;
+export default NotesPage;

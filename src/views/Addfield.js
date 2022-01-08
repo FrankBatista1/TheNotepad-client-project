@@ -1,20 +1,25 @@
-import EditorJs from "react-editor-js";
+//Editorjs tools file
 import { EDITOR_JS_TOOLS } from "../services/tools";
+
+//Libraries
+import EditorJs from "react-editor-js";
 import React from "react";
 import Swal from 'sweetalert2'
 import axios from "axios";
 import LogoutButton from "../components/LogoutButton";
 
+//Stylesheets
 import "../stylesheets/FormPage.css"
 import "../stylesheets/Editor.css";
 
-const apiUrl = process.env.REACT_APP_API_URL
+const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const AddField = ({history}) => {
   const instanceRef = React.useRef(null);// Creating an ref constant
 
   async function handleSave() {
-    const token = localStorage.getItem("authToken");
+    const token = localStorage.getItem(authToken);
     const config = {
       headers: {
         "Content-Type": "application/json",

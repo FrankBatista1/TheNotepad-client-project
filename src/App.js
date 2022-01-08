@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 // Components imports
 import MyNavbar from "./components/MyNavbar";
 // Views imports
-import FieldsPage from "./views/FieldsPage";
+import NotesPage from "./views/NotesPage";
 import FieldView from "./views/FieldView";
 import AddField from "./views/Addfield";
 import HeroPage from "./views/HeroPage";
@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/login" component={LoginPage}></Route>
         <div>
           <MyNavbar />
-          <UserPage exact path="/fields" component={FieldsPage}></UserPage>
+          <UserPage exact path="/fields" component={NotesPage}></UserPage>
           <UserPage exact path="/field/:id" component={FieldView}></UserPage>
           <UserPage exact path="/addField" component={AddField}></UserPage>
         </div>

@@ -5,6 +5,7 @@ import axios from "axios";
 import "../stylesheets/FormPage.css";
 
 const apiUrl = process.env.REACT_APP_API_URL;
+const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
 
 const LoginPage = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ const LoginPage = ({ history }) => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (localStorage.getItem("authToken")) {
+    if (localStorage.getItem(authToken)) {
       history.push("/fields");
     }
   }, [history]);
@@ -33,7 +34,7 @@ const LoginPage = ({ history }) => {
         config
       );
 
-      localStorage.setItem("authToken", data.token);
+      localStorage.setItem(authToken, data.token);
 
       history.push("/fields");
     } catch (error) {
