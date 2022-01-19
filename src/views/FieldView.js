@@ -17,7 +17,6 @@ const FieldView = ({ match }) => {
   useEffect(() => {
     const getSingleField = async () => {
       const token = localStorage.getItem(authToken);
-
       const config = {
         headers: {
           "Content-Type": "application/json",
@@ -25,7 +24,6 @@ const FieldView = ({ match }) => {
           Accept: "application/json",
         },
       };
-
       try {
         const { data } = await axios.get(
           `${apiUrl}/fields/field/${id}`,

@@ -1,22 +1,19 @@
 //Stylesheets
 import "../stylesheets/Aboutpage.css";
+import Logo from "../components/Logo";
 
 const AboutPage = () => {
   return (
     <>
-      <div className="centerAbout">
-        <div>
-          <img
-            className="logoAboutLogoImg"
-            src="https://res.cloudinary.com/duscflsvf/image/upload/v1632013750/Add_a_subheading_mbt1my.png" alt="About logo img"
-          ></img>
-          <h1 className="titleaboutpage">THE NOTEPAD</h1>
-        </div>
+      <Logo />
+
+      <div>
+        <h3
+          style={{ color: "white", display: "flex", justifyContent: "center" }}
+        >
+          Keep your notes as simple as posible with our features
+        </h3>
       </div>
-      <div >
-        <h2 style={{color: "white", display: 'flex', justifyContent: 'center'}}>A notepad app to add your personal notes</h2>
-      </div>
-      
     </>
   );
 };

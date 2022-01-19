@@ -16,7 +16,7 @@ const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
 const apiUrl = process.env.REACT_APP_API_URL;
 
 const AddField = ({history}) => {
-  const instanceRef = React.useRef(null);// Creating an ref constant
+  const instanceRef = React.useRef(null);
 
   async function handleSave() {
     const token = localStorage.getItem(authToken);
@@ -28,7 +28,9 @@ const AddField = ({history}) => {
       }
     }
     
+
     const val = await instanceRef.current.save()
+
     if(val.blocks[0]){
         await axios.post(`${apiUrl}/fields/field`, val, config).then( Swal.fire({
         icon: 'success',
