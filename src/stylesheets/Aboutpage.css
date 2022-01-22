@@ -1,16 +1,9 @@
-.titleAboutPage {
-  font-family: Consolas, monaco, monospace;
-  color: white;
-  font-size: 22px;
-}
-.logoAboutlogoimg {
+.demo_container {
   width: 100%;
-}
-.centerAbout {
   display: flex;
   justify-content: center;
 }
-.divideAbout {
-  display: flex;
-  justify-content: space-around;
+.demo_img {
+  margin-top: 30px;
+  width: 80%;
 }
