@@ -23,7 +23,7 @@ const AddField = ({history}) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `${token}`,
         Accept: "application/json"
       }
     }

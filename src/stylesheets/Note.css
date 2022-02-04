@@ -28,7 +28,7 @@
 }
 .bottom-buttons {
   position: absolute;
-  width:100%;
+  width:cover;
   left: 1300px;
   top: 700px;
 }

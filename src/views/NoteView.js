@@ -10,32 +10,32 @@ import axios from "axios";
 const apiUrl = process.env.REACT_APP_API_URL;
 const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
 
-const FieldView = ({ match }) => {
-  const [field, setField] = useState({});
+const NoteView = ({ match }) => {
+  const [note, setNote] = useState({});
   const { id } = match.params;
 
   useEffect(() => {
-    const getSingleField = async () => {
+    const getSingleNote = async () => {
       const token = localStorage.getItem(authToken);
       const config = {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
           Accept: "application/json",
         },
       };
       try {
         const { data } = await axios.get(
-          `${apiUrl}/fields/field/${id}`,
+          `${apiUrl}/notes/note/${id}`,
           config
         );
-        setField(data);
+        setNote(data);
       } catch (error) {
         localStorage.removeItem("authToken");
         console.log(error);
       }
     };
-    getSingleField();
+    getSingleNote();
   }, [id]);
 
   const instanceRef = useRef(null);
@@ -52,7 +52,7 @@ const FieldView = ({ match }) => {
     };
     await instanceRef.current
       .save()
-      .then((val) => axios.put(`${apiUrl}/fields/field/${id}`, val, config));
+      .then((val) => axios.put(`${apiUrl}/notes/note/${id}`, val, config));
     Swal.fire({
       icon: "success",
       title: "Saved",
@@ -68,7 +68,7 @@ const FieldView = ({ match }) => {
       </button>
       <EditorJs
         enableReInitialize={true}
-        data={field}
+        data={note}
         instanceRef={(instance) => (instanceRef.current = instance)}
         tools={EDITOR_JS_TOOLS}
       />
@@ -77,4 +77,4 @@ const FieldView = ({ match }) => {
   );
 };
 
-export default FieldView;
+export default NoteView;

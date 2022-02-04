@@ -9,7 +9,7 @@ const apiUrl = process.env.REACT_APP_API_URL;
 const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
 
 const NotesPage = ({ history }) => {
-  const [fields, setFields] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -24,18 +24,16 @@ const NotesPage = ({ history }) => {
 
   const fetchPrivateData = async () => {
     const token = localStorage.getItem(authToken);
-    console.log(token);
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
         Accept: "application/json",
       },
     };
 
     try {
-      const { data } = await axios.get(`${apiUrl}/fields`, config);
-      setFields(data);
+      const { data } = await axios.get(`${apiUrl}/notes`, config);
+      setNotes(data);
     } catch (error) {
       // localStorage.removeItem("authToken");
       setError("You are not authorized please login");
@@ -47,7 +45,6 @@ const NotesPage = ({ history }) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
         Accept: "application/json",
       },
     };
@@ -62,22 +59,22 @@ const NotesPage = ({ history }) => {
       confirmButtonText: "Yes, delete it",
     }).then((result) => {
       if (result.isConfirmed) {
-        const filtered = fields.filter((field) => field._id !== id);
-        axios.delete(`${apiUrl}/fields/field/${id}`, config);
-        setFields(filtered);
-        Swal.fire("Deleted!", "Your field has been deleted.", "success");
+        const filtered = notes.filter((note) => note._id !== id);
+        axios.delete(`${apiUrl}/notes/note/${id}`, config);
+        setNotes(filtered);
+        Swal.fire("Deleted!", "Your note has been deleted.", "success");
       }
     });
   };
 
   return (
     <div>
-      {fields &&
-        fields.map((field) => (
-          <div className="noteAndDelete-container" key={field._id}>
-            <Note props={field} />
+      {notes &&
+        notes.map((note) => (
+          <div className="noteAndDelete-container" key={note._id}>
+            <Note props={note} />
             <img
-              onClick={() => handleDelete(field._id)}
+              onClick={() => handleDelete(note._id)}
               className="deletebutton"
               src="https://www.freeiconspng.com/thumbs/x-png/red-x-png-4.png"
               alt="x"

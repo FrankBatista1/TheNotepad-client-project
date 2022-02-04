@@ -66,12 +66,18 @@
   color: rgb(228, 226, 226);
   cursor: pointer;
 }
-.forgotpass_btn {
+.botbuttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.botbuttons_btn {
   padding-bottom: 5%;
   color: rgba(236, 234, 234, 0.658);
 }
 
-.forgotpass_btn:hover {
+.botbuttons_btn:hover {
   padding-bottom: 5%;
   color: rgb(228, 226, 226);
 }

@@ -4,12 +4,13 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import MyNavbar from "./components/MyNavbar";
 // Views imports
 import NotesPage from "./views/NotesPage";
-import FieldView from "./views/FieldView";
+import NoteView from "./views/NoteView";
 import AddField from "./views/Addfield";
 import HeroPage from "./views/HeroPage";
 import AboutPage from "./views/AboutPage";
 import UserPage from "./views/UserPage";
 import LoginPage from "./views/LoginPage";
+import SignupPage from "./views/SignupPage";
 //General styles
 import "./App.css"
 
@@ -21,10 +22,11 @@ function App() {
         <Route exact path="/" component={HeroPage}></Route>
         <Route exact path="/about" component={AboutPage}></Route>
         <Route exact path="/login" component={LoginPage}></Route>
+        <Route exact path="/signup" component={SignupPage}></Route>
         <div>
           <MyNavbar />
-          <UserPage exact path="/fields" component={NotesPage}></UserPage>
-          <UserPage exact path="/field/:id" component={FieldView}></UserPage>
+          <UserPage exact path="/notes" component={NotesPage}></UserPage>
+          <UserPage exact path="/notes/:id" component={NoteView}></UserPage>
           <UserPage exact path="/addField" component={AddField}></UserPage>
         </div>
       </Switch>

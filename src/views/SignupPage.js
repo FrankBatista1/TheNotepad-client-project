@@ -7,7 +7,8 @@ import "../stylesheets/FormPage.css";
 const apiUrl = process.env.REACT_APP_API_URL;
 const authToken = process.env.REACT_APP_AUTH_TOKEN_NAME;
 
-const LoginPage = ({ history }) => {
+const SignupPage = ({ history }) => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -18,7 +19,7 @@ const LoginPage = ({ history }) => {
     }
   }, [history]);
 
-  const loginHandler = async (e) => {
+  const signUpHandler = async (e) => {
     e.preventDefault();
 
     const config = {
@@ -29,8 +30,8 @@ const LoginPage = ({ history }) => {
 
     try {
       const { data } = await axios.post(
-        `${apiUrl}/auth/login`,
-        { email, password },
+        `${apiUrl}/auth/signup`,
+        { name, email, password },
         config
       );
 
@@ -44,11 +45,20 @@ const LoginPage = ({ history }) => {
 
   return (
     <>
-      <form className="formContainer" onSubmit={loginHandler}>
+      <form className="formContainer" onSubmit={signUpHandler}>
         <Link to="/" className="theNotepadHeader">
           THE NOTEPAD
         </Link>
         {error && <span className="errormsg">{error}</span>}
+        <input
+          className="formInput"
+          required
+          id="name"
+          placeholder="Name"
+          type="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <input
           className="formInput"
           required
@@ -73,8 +83,8 @@ const LoginPage = ({ history }) => {
           LOGIN
         </button>
         <div className="botbuttons">
-          <Link to="/signup" className="botbuttons_btn">
-            Doesn't have an account?
+          <Link to="/login" className="botbuttons_btn">
+            Already have an account?
           </Link>
           <Link to="/" className="botbuttons_btn">
             Forgot password?
@@ -85,4 +95,4 @@ const LoginPage = ({ history }) => {
   );
 };
 
-export default LoginPage;
+export default SignupPage;
