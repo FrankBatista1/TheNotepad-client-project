@@ -27,7 +27,7 @@ function App() {
           <MyNavbar />
           <UserPage exact path="/notes" component={NotesPage}></UserPage>
           <UserPage exact path="/notes/:id" component={NoteView}></UserPage>
-          <UserPage exact path="/addField" component={AddNote}></UserPage>
+          <UserPage exact path="/addNote" component={AddNote}></UserPage>
         </div>
       </Switch>
     </BrowserRouter>

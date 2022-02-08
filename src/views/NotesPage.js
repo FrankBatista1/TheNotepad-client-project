@@ -32,7 +32,8 @@ const NotesPage = ({ history }) => {
     };
 
     try {
-      const { data } = await axios.get(`${apiUrl}/notes`, config);
+      const uid = localStorage.getItem("uid");
+      const { data } = await axios.get(`${apiUrl}/notes/note/user/${uid}`, config);
       setNotes(data);
     } catch (error) {
       // localStorage.removeItem("authToken");
