@@ -33,7 +33,7 @@ const LoginPage = ({ history }) => {
         { email, password },
         config
       );
-
+      localStorage.setItem("uid", data.uid);
       localStorage.setItem(authToken, data.token);
 
       history.push("/notes");

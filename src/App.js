@@ -5,7 +5,7 @@ import MyNavbar from "./components/MyNavbar";
 // Views imports
 import NotesPage from "./views/NotesPage";
 import NoteView from "./views/NoteView";
-import AddField from "./views/Addfield";
+import AddNote from "./views/AddNote";
 import HeroPage from "./views/HeroPage";
 import AboutPage from "./views/AboutPage";
 import UserPage from "./views/UserPage";
@@ -27,7 +27,7 @@ function App() {
           <MyNavbar />
           <UserPage exact path="/notes" component={NotesPage}></UserPage>
           <UserPage exact path="/notes/:id" component={NoteView}></UserPage>
-          <UserPage exact path="/addField" component={AddField}></UserPage>
+          <UserPage exact path="/addField" component={AddNote}></UserPage>
         </div>
       </Switch>
     </BrowserRouter>

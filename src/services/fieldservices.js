@@ -1,29 +1,29 @@
 import axios from 'axios'
 
-const apiUrl = 'http://localhost:5000/api'
+const apiUrl = process.env.REACT_APP_API_URL
 
-export const getFieldsFromApi = async () => {
+export const getNotesFromApi = async () => {
 
-  const response = await axios.get(`${apiUrl}/fields`)
+  const response = await axios.get(`${apiUrl}/notes`)
   return response;
 };
 
-export const postFieldToApi = async (field) => {
-  const response = await axios.post(`${apiUrl}/fields/field`, field);
+export const postNoteToApi = async (note) => {
+  const response = await axios.post(`${apiUrl}/notes/note`, note);
   return response;
 }
 
-export const getSingleFieldFromApi = async (id) => {
-  const response = await axios.get(`${apiUrl}/fields/field/${id}`);
+export const getSingleNoteFromApi = async (id) => {
+  const response = await axios.get(`${apiUrl}/notes/note/${id}`);
   return response;
 }
-export const updateFieldtoApi = async (field, id) => {
-  const response = await axios.put(`${apiUrl}/fields/field/${id}`, field)
+export const updateNotetoApi = async (note, id) => {
+  const response = await axios.put(`${apiUrl}/notes/note/${id}`, note)
   return response;
 }
 
-export const deleteFieldFromApi = async (id) => {
-  const response = await axios.delete(`${apiUrl}/fields/field/${id}`);
+export const deleteNoteFromApi = async (id) => {
+  const response = await axios.delete(`${apiUrl}/notes/note/${id}`);
   return response;
 }
 
