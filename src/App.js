@@ -26,7 +26,7 @@ function App() {
         <div>
           <MyNavbar />
           <UserPage exact path="/notes" component={NotesPage}></UserPage>
-          <UserPage exact path="/notes/:id" component={NoteView}></UserPage>
+          <UserPage exact path="/note/:id" component={NoteView}></UserPage>
           <UserPage exact path="/addNote" component={AddNote}></UserPage>
         </div>
       </Switch>

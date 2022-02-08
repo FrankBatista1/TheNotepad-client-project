@@ -46,10 +46,11 @@ const NoteView = ({ match }) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `${token}`,
         Accept: "application/json",
       },
     };
+    try {
     await instanceRef.current
       .save()
       .then((val) => axios.put(`${apiUrl}/notes/note/${id}`, val, config));
@@ -59,6 +60,14 @@ const NoteView = ({ match }) => {
       text: "Your changes have been saved",
       confirmButtonColor: "#878787",
     });
+  } catch {
+    Swal.fire({
+      icon: "success",
+      title: "Error",
+      text: "Your changes could not been saved",
+      confirmButtonColor: "#878787",
+    });
+  }
   }
 
   return (
